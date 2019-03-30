@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-    <link rel="icon" th:href="@{/favicon.ico}"/>
-    <link rel="stylesheet" th:href="@{/css/icons.min.css}"/>
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
-
-    <title>Page Not Found</title>
-</head>
+<head th:include="common/header :: common-header" />
 <body class="authentication-bg">
 
 <div class="account-pages mt-5 mb-5">
@@ -47,11 +38,11 @@
 <!-- end page -->
 
 <footer class="footer footer-alt">
-    2018 - 2019 © Hyper - Coderthemes.com
+    2019 © PGaur - Wander-Notes
 </footer>
 
 <!-- App js -->
-<script th:src="@{/js/bootstrap.min.js}"></script>
+<div th:include="common/header :: body-bottom-scripts" />
 
 </body>
 </html>

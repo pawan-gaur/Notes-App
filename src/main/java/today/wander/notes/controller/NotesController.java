@@ -21,10 +21,10 @@ public class NotesController {
 	@Autowired
 	private NotesService notesService;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/", method = RequestMethod.GET)
     public String listGifs(ModelMap modelMap){
-        return "index";
-    }
+        return "home";
+    }*/
 	
 	@RequestMapping(value = "/newNote", method = RequestMethod.GET)
     public String newNote(){
