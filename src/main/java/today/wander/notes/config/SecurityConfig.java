@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import today.wander.notes.service.userServiceImpl.UserSecurityService;
+import today.wander.notes.service.UserSecurityService;
 
 import java.security.SecureRandom;
 

@@ -1,4 +1,4 @@
-package today.wander.notes.service;
+package today.wander.notes.repository;
 
 import today.wander.notes.model.User;
 import today.wander.notes.model.security.UserRole;

@@ -1,4 +1,4 @@
-package today.wander.notes.service.userServiceImpl;
+package today.wander.notes.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +9,7 @@ import today.wander.notes.model.User;
 import today.wander.notes.model.security.UserRole;
 import today.wander.notes.repository.RoleDao;
 import today.wander.notes.repository.UserDao;
-import today.wander.notes.service.UserService;
+import today.wander.notes.repository.UserService;
 
 import javax.transaction.Transactional;
 import java.util.List;

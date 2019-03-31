@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import today.wander.notes.model.User;
 import today.wander.notes.model.security.UserRole;
 import today.wander.notes.repository.RoleDao;
-import today.wander.notes.service.UserService;
+import today.wander.notes.repository.UserService;
 
-import java.security.Principal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -58,26 +57,15 @@ public class LoginController {
             userRoles.add(new UserRole(user, roleDao.findByName("ROLE_USER")));
 
             userService.createUser(user, userRoles);
-            return "redirect:/";
+            return "redirect:/login";
         }
     }
 
-    @RequestMapping("/home")
+ /*   @RequestMapping("/home")
     public String userFront(Principal principal, Model model) {
         User user = userService.findByUsername(principal.getName());
-
         model.addAttribute("user", user);
-
         return "home";
-    }
+    }*/
 
-    @RequestMapping(value = "/simple-login", method = RequestMethod.GET)
-    public String simpleLogin(ModelMap modelMap) {
-        return "simple-login";
-    }
-
-    @RequestMapping(value ="/simple-register", method = RequestMethod.GET)
-    public String simpleRegister(ModelMap modelMap) {
-        return "simple-register";
-    }
 }

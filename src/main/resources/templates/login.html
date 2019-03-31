@@ -1,109 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:include="common/header :: common-header"/>
-<body class="auth-fluid-pages pb-0">
-<div class="auth-fluid">
-    <div class="auth-fluid-form-box">
-        <div class="align-items-center d-flex h-100">
-            <div class="card-body">
+<body class="authentication-bg">
+<div class="account-pages mt-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card">
 
-                <div class="auth-brand text-center text-lg-left">
-                    <a href="/">
-                        <span><img src="images/logo-light.png" alt="" height="18"></span>
-                    </a>
-                </div>
-
-                <h4 class="mt-0">Sign In</h4>
-                <p class="text-muted mb-4">Enter your email address and password to access account.</p>
-
-                <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert"
-                     th:if="${param.error}">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>Error - </strong> Incorrect Username and Password
-                </div>
-
-                <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert"
-                     th:if="${param.logout}">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>Logout - </strong> Successfully. Want to Login again
-                </div>
-
-                <form th:action="@{/login}" method="post">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" roleId="username" class="form-control" placeholder="Username" name="username"
-                               id="username"
-                               required="required" autofocus="autofocus"/>
-                    </div>
-                    <div class="form-group">
-                        <a href="/password-recover" class="text-muted float-right">
-                            <small>Forgot your password?</small>
+                    <div class="card-header pt-4 pb-4 text-center bg-primary">
+                        <a href="/">
+                            <span><img src="images/logo.png" alt="" height="18"></span>
                         </a>
-                        <label for="password">Password</label>
-                        <input type="password" roleId="inputPassword" class="form-control" placeholder="Password"
-                               id="password"
-                               name="password" required="required"/>
                     </div>
-                    <div class="form-group mb-3">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="checkbox-signin">
-                            <label class="custom-control-label" for="checkbox-signin">Remember me</label>
+
+                    <div class="card-body p-4">
+
+                        <div class="text-center w-75 m-auto">
+                            <h4 class="text-dark-50 text-center mt-0 font-weight-bold">Sign In</h4>
+                            <p class="text-muted mb-4">Enter your email address and password to access account.</p>
                         </div>
-                    </div>
-                    <div class="form-group mb-0 text-center">
-                        <button class="btn btn-primary btn-block" type="submit"><i class="mdi mdi-login"></i> Log In
-                        </button>
-                    </div>
-                    <div class="text-center mt-4">
-                        <p class="text-muted font-16">Sign in with</p>
-                        <ul class="social-list list-inline mt-3">
-                            <li class="list-inline-item">
-                                <a href="#" class="social-list-item border-primary text-primary"><i
-                                        class="mdi mdi-facebook"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="social-list-item border-danger text-danger"><i
-                                        class="mdi mdi-google"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="social-list-item border-info text-info"><i
-                                        class="mdi mdi-linkedin"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="social-list-item border-secondary text-secondary"><i
-                                        class="mdi mdi-github-circle"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </form>
 
-                <footer class="footer footer-alt">
-                    <p class="text-muted">Don't have an account? <a th:href="@{/signup}" class="text-muted ml-1"><b>Sign
-                        Up</b></a></p>
-                </footer>
+                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                             role="alert"
+                             th:if="${param.error}">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Error - </strong> Incorrect Username and Password
+                        </div>
 
+                        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
+                             role="alert"
+                             th:if="${param.logout}">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Logout - </strong> Successfully. Want to Login again
+                        </div>
+
+                        <form th:action="@{/login}" method="post">
+
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" roleId="username" class="form-control" placeholder="Username"
+                                       name="username"
+                                       id="username"
+                                       required="required" autofocus="autofocus"/>
+                            </div>
+                            <div class="form-group">
+                                <a href="/password-recover" class="text-muted float-right">
+                                    <small>Forgot your password?</small>
+                                </a>
+                                <label for="password">Password</label>
+                                <input type="password" roleId="inputPassword" class="form-control"
+                                       placeholder="Password"
+                                       id="password"
+                                       name="password" required="required"/>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="checkbox-signin" checked>
+                                    <label class="custom-control-label" for="checkbox-signin">Remember me</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-0 text-center">
+                                <button class="btn btn-primary" type="submit"> Log In</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12 text-center">
+                        <p class="text-muted">Don't have an account? <a href="/signup" class="text-muted ml-1"><b>Sign
+                            Up</b></a></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="auth-fluid-right text-center">
-        <div class="auth-user-testimonial">
-            <h2 class="mb-3">I love Wander Notes!</h2>
-            <p class="lead"><i class="mdi mdi-format-quote-open"></i> It's a simple to Use. I love it very much! . <i
-                    class="mdi mdi-format-quote-close"></i>
-            </p>
-            <p>
-                - Wander Notes User
-            </p>
-        </div> <!-- end auth-user-testimonial-->
-    </div>
 </div>
-
-<div th:include="common/header :: body-bottom-scripts"/>
-
+<footer class="footer footer-alt">
+    2019 © PGaur - Wander Notes
+</footer>
+<script th:src="@{/js/bootstrap.min.js}"></script>
 </body>
-
 </html>

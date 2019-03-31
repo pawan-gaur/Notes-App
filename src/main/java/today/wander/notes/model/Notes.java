@@ -1,78 +1,88 @@
 package today.wander.notes.model;
 
-import java.util.Date;
-
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "notes")
 public class Notes {
 
-	@Id
-	@GeneratedValue
-	@Column(name = "id")
-	private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
-	@Column(name = "title")
-	private String title;
+    private String title;
 
-	@Column(name = "description")
-	private String description;
+    private String description;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "created_date")
-	private Date doc = new Date();
+    private Date doc = new Date();
 
-	@Column(name = "modified_date")
-	private Date dou;
+    private Date dou = new Date();
 
-	public Notes() {
-	}
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-	public long getId() {
-		return id;
-	}
+    public Notes() {
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public Date getDoc() {
-		return doc;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public void setDoc(Date doc) {
-		this.doc = doc;
-	}
+    public Date getDoc() {
+        return doc;
+    }
 
-	public Date getDou() {
-		return dou;
-	}
+    public void setDoc(Date doc) {
+        this.doc = doc;
+    }
 
-	public void setDou(Date dou) {
-		this.dou = dou;
-	}
+    public Date getDou() {
+        return dou;
+    }
 
-	@Override
-	public String toString() {
-		return "Notes [id=" + id + ", title=" + title + ", description=" + description + ", doc=" + doc + ", dou=" + dou
-				+ "]";
-	}
+    public void setDou(Date dou) {
+        this.dou = dou;
+    }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Notes{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", doc=" + doc +
+                ", dou=" + dou +
+                ", user=" + user +
+                '}';
+    }
 }

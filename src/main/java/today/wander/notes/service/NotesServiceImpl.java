@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import today.wander.notes.model.Notes;
 import today.wander.notes.repository.NotesRepository;
+import today.wander.notes.repository.NotesService;
 
 @Service
 @Transactional
@@ -18,7 +19,7 @@ public class NotesServiceImpl implements NotesService {
 	private NotesRepository notesRepository;
 
 	public List<Notes> getNotes() {
-		return (List<Notes>) notesRepository.findAll();
+		return notesRepository.findAll();
 	}
 
 	public void saveNotes(Notes notes) {
@@ -35,6 +36,10 @@ public class NotesServiceImpl implements NotesService {
 
 	public Object deleteNotes(long id) {
 		return notesRepository.deleteByid(id);
+	}
+
+	public List<Notes> findByTitleName(String name) {
+		return notesRepository.findByTitleLike("%" + name + "%");
 	}
 
 }
