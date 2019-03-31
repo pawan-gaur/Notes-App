@@ -24,3 +24,6 @@ hs_err_pid*
 .idea/
 notes-app.iml
 target/
+.settings/
+.classpath
+.project
