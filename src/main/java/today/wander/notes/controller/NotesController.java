@@ -52,14 +52,14 @@ public class NotesController {
         return "notes";
     }
 
-    @RequestMapping(value = "/updateNotes", method = RequestMethod.PUT)
-    public ResponseEntity<String> updateNotes(@RequestBody Notes currentNotes) {
-        Notes note = notesService.findById(currentNotes.getId());
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
+    public String updateNotes(@PathVariable long id, Model model, Principal principal, Notes notes) {
+        Notes note = notesService.findById(id);
         if (note == null) {
-            return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
+            model.addAttribute("isUpdated", false);
         }
-        notesService.updateNotes(currentNotes, currentNotes.getId());
-        return new ResponseEntity<String>("Success", HttpStatus.OK);
+        notesService.updateNotes(notes, id);
+        return "redirect:/home";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
